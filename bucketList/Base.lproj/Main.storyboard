@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--LandingVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="LandingVC" customModule="bucketList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hja-hG-ehx" customClass="RoundedButton" customModule="bucketList" customModuleProvider="target">
+                                <rect key="frame" x="100" y="314.5" width="175" height="38"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="19"/>
+                                <state key="normal" title="Enter BucketList"/>
+                                <connections>
+                                    <action selector="enterButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1bH-SY-9eE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="windowFrameColor" catalog="System" colorSpace="catalog"/>
+                        <constraints>
+                            <constraint firstItem="hja-hG-ehx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="8eC-XY-KwT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hja-hG-ehx" secondAttribute="trailing" constant="100" id="I13-a0-uRf"/>
+                            <constraint firstItem="hja-hG-ehx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="TIg-QB-hZO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <segue destination="GVQ-cD-aVZ" kind="showDetail" identifier="toBucketListNav" id="P89-ds-iJf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-198" y="26"/>
+        </scene>
+        <!--Bucket ListVC-->
+        <scene sceneID="bd0-YQ-yfv">
+            <objects>
+                <viewController id="Q7A-yW-pgP" customClass="BucketListVC" customModule="bucketList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="V4J-fd-pGY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kvC-4N-hka">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="bucketCell" id="WA4-fo-fxV" customClass="BucketCell" customModule="bucketList" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WA4-fo-fxV" id="8oS-3Y-uQm">
+                                            <rect key="frame" x="0.0" y="0.0" width="308" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="saJ-oK-Maa">
+                                                    <rect key="frame" x="5" y="8.5" width="298" height="27.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="10" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z7j-p3-R9m">
+                                                            <rect key="frame" x="0.0" y="0.0" width="24" height="27.5"/>
+                                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                                            <color key="textColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ok-3e-lpx">
+                                                            <rect key="frame" x="44" y="0.0" width="254" height="27.5"/>
+                                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                                            <color key="textColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="saJ-oK-Maa" firstAttribute="leading" secondItem="8oS-3Y-uQm" secondAttribute="leading" constant="5" id="IX6-Gu-VwR"/>
+                                                <constraint firstItem="saJ-oK-Maa" firstAttribute="centerY" secondItem="8oS-3Y-uQm" secondAttribute="centerY" id="PZX-I3-0r1"/>
+                                                <constraint firstAttribute="trailing" secondItem="saJ-oK-Maa" secondAttribute="trailing" constant="5" id="kWk-J8-YoI"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="bucketLbl" destination="9ok-3e-lpx" id="yfM-fg-4TG"/>
+                                            <outlet property="indexLbl" destination="z7j-p3-R9m" id="cVc-vN-hxR"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kvC-4N-hka" firstAttribute="leading" secondItem="TI0-gb-5Ij" secondAttribute="leading" id="1K1-0o-YMH"/>
+                            <constraint firstItem="TI0-gb-5Ij" firstAttribute="trailing" secondItem="kvC-4N-hka" secondAttribute="trailing" id="PnY-NY-Cc0"/>
+                            <constraint firstItem="TI0-gb-5Ij" firstAttribute="bottom" secondItem="kvC-4N-hka" secondAttribute="bottom" id="cay-hf-2CK"/>
+                            <constraint firstItem="kvC-4N-hka" firstAttribute="top" secondItem="TI0-gb-5Ij" secondAttribute="top" id="wDN-22-R11"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TI0-gb-5Ij"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="4Aa-cL-mDU">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="hOh-nw-y87">
+                            <connections>
+                                <segue destination="hdk-id-LGT" kind="presentation" identifier="toMissionVC" id="z2E-zU-xC5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="bucketListTableView" destination="kvC-4N-hka" id="ucg-YM-5XE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rp1-nV-hLm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1868" y="25.637181409295355"/>
+        </scene>
+        <!--MissionVC-->
+        <scene sceneID="e48-IN-LMj">
+            <objects>
+                <viewController id="hdk-id-LGT" customClass="MissionVC" customModule="bucketList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="alb-Xa-oN6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add mission here" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aKL-2B-Ucs">
+                                <rect key="frame" x="50" y="268.5" width="275" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Mission" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQ4-3C-fyZ">
+                                <rect key="frame" x="84.5" y="70" width="206.5" height="34.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="25"/>
+                                <color key="textColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="pwI-Ob-meR">
+                                <rect key="frame" x="40" y="328.5" width="295" height="38"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z37-U7-DjZ" customClass="RoundedButton" customModule="bucketList" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="147" height="38"/>
+                                        <color key="backgroundColor" red="0.1843137255" green="0.48627450979999998" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="19"/>
+                                        <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="cancelButtonPressed:" destination="hdk-id-LGT" eventType="touchUpInside" id="UTa-4C-bXT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDW-Ph-eUp" customClass="RoundedButton" customModule="bucketList" customModuleProvider="target">
+                                        <rect key="frame" x="148" y="0.0" width="147" height="38"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="19"/>
+                                        <state key="normal" title="Submit"/>
+                                        <connections>
+                                            <action selector="submitButtonPressed:" destination="hdk-id-LGT" eventType="touchUpInside" id="dL8-Jl-yqh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pwI-Ob-meR" firstAttribute="leading" secondItem="W9z-Sj-6de" secondAttribute="leading" constant="40" id="2Jj-Mm-b4d"/>
+                            <constraint firstItem="aKL-2B-Ucs" firstAttribute="centerY" secondItem="alb-Xa-oN6" secondAttribute="centerY" constant="-50" id="Ji8-Z5-Jc3"/>
+                            <constraint firstItem="aKL-2B-Ucs" firstAttribute="leading" secondItem="W9z-Sj-6de" secondAttribute="leading" constant="50" id="Mk6-ZM-ac4"/>
+                            <constraint firstItem="W9z-Sj-6de" firstAttribute="trailing" secondItem="pwI-Ob-meR" secondAttribute="trailing" constant="40" id="VYS-zC-ZSA"/>
+                            <constraint firstItem="pwI-Ob-meR" firstAttribute="top" secondItem="aKL-2B-Ucs" secondAttribute="bottom" constant="30" id="djT-SH-2mI"/>
+                            <constraint firstItem="pQ4-3C-fyZ" firstAttribute="centerX" secondItem="alb-Xa-oN6" secondAttribute="centerX" id="jtV-f8-f1C"/>
+                            <constraint firstItem="pQ4-3C-fyZ" firstAttribute="top" secondItem="W9z-Sj-6de" secondAttribute="top" constant="50" id="muh-Ws-xUn"/>
+                            <constraint firstItem="W9z-Sj-6de" firstAttribute="trailing" secondItem="aKL-2B-Ucs" secondAttribute="trailing" constant="50" id="tFz-AV-siD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="W9z-Sj-6de"/>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="Z37-U7-DjZ" id="jy3-iH-jCx"/>
+                        <outlet property="missionTextField" destination="aKL-2B-Ucs" id="4xE-7D-4pU"/>
+                        <outlet property="titleLabel" destination="pQ4-3C-fyZ" id="S29-r4-T1k"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4xd-tp-RAt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2914" y="26"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cTh-pI-A43">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GVQ-cD-aVZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GJ9-75-3HR">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Q7A-yW-pgP" kind="relationship" relationship="rootViewController" id="EMa-sa-bb9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mwx-su-ZO4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928.79999999999995" y="25.637181409295355"/>
+        </scene>
+    </scenes>
+</document>
